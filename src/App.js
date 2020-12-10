@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import {Data, MyImage, ActionAlert} from './profile/Profile';
 
 function App() {
+  const myStyle = {color:'#d4ffe6', fontSize: 15, fontWeight: 400, 
+    backgroundColor: "#282c34", textAlign: "center", border:"solid 6px blue"};
+  const handleName = e => {
+    e.preventDefault();
+    alert("Naruto Uzumaki");
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <header style={myStyle}>
+      <Data fullName ="Naruto Uzumaki" bio ="26 years old and I love ramen" profession="7th Hokage"></Data>
+      <MyImage>picture</MyImage>
+      <br></br>
+      <ActionAlert handleName={handleName}></ActionAlert>
+    </header>
+    </>
   );
 }
 
